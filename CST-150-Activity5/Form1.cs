@@ -77,11 +77,7 @@ namespace CST_150_Activity5
                         }
                     }
 
-                    lowerCaseLabel.Text = lowercaseFileData;
-                    firstAlphabetLabel.Text = firstInAlphabet;
-                    lastAlphabetLabel.Text = lastInAlphabet;
-                    longestWordLabel.Text = longestWord;
-                    mostVowelsLabel.Text = mostVowels;
+                    fileStats.Text = "Lowercase: " + lowercaseFileData + "\r\nFirst Ascending: " + firstInAlphabet + "\r\nFirst Descending: " + lastInAlphabet + "\r\nLongest Word: " + longestWord + "\r\nMost Vowels: " + mostVowels;
                 }
 
             }
