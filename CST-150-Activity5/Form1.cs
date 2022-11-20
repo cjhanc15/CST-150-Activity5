@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CST_150_Activity5
 {
@@ -23,18 +16,21 @@ namespace CST_150_Activity5
 
         private void uploadButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fo = new OpenFileDialog();
-            fo.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            fo.ShowDialog();
-            if (File.Exists(fo.FileName))
+            //create an OpenFileDialog for the user to select a file
+            OpenFileDialog fileBrowserDialog = new OpenFileDialog();
+            fileBrowserDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            fileBrowserDialog.ShowDialog();
+            if (File.Exists(fileBrowserDialog.FileName))
             {
-                using (StreamReader reader = new StreamReader(fo.FileName, Encoding.UTF8))
+                using (StreamReader reader = new StreamReader(fileBrowserDialog.FileName, Encoding.UTF8))
                 {
                     string fileData = reader.ReadToEnd();
                     string[] arrayOfFileData = fileData.Split(' ');
 
+                    //convert all data to lowercase
                     string lowercaseFileData = fileData.ToLower();
 
+                    //get the longest word
                     int lengthOfWord = 0;
                     string longestWord = "";
 
@@ -47,13 +43,12 @@ namespace CST_150_Activity5
                         }
                     }
 
-                    //ascending order
+                    //alphabetize
                     string firstInAlphabet = arrayOfFileData.OrderBy(x => x.ToLower()).First();
-                    //last in ascending order
                     string lastInAlphabet = arrayOfFileData.OrderBy(x => x.ToLower()).Last();
 
+                    //compare vowels to each letter
                     string[] arrayOfVowels = {"a", "e", "i", "o", "u"};
-
                     int highestVowelCount = 0;
                     string mostVowels = "";
 
@@ -77,17 +72,18 @@ namespace CST_150_Activity5
                             }
                         }
                     }
-
+                    // set textbox text to the data
                     fileStats.Text = "Lowercase: " + lowercaseFileData + "\r\nFirst Ascending: " + firstInAlphabet + "\r\nFirst Descending: " + lastInAlphabet + "\r\nLongest Word: " + longestWord + "\r\nMost Vowels: " + mostVowels;
+                    
                 }
 
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void downloadButton_Click(object sender, EventArgs e)
         {
-        System.IO.File.WriteAllText(@"C:\Users\Public\fileStats.txt", fileStats.Text);
-        downloadLabel.Text = "fileStats.txt downloaded successfully!";
+            // write all data to new file
+            System.IO.File.WriteAllText($@"C:\Users\Public\{userFileName.Text}.txt", fileStats.Text);
+            downloadLabel.Text = $"{userFileName.Text}.txt downloaded successfully!";
         }
     }
 }

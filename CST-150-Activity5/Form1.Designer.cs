@@ -33,8 +33,10 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.title = new System.Windows.Forms.Label();
             this.fileStats = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.downloadButton = new System.Windows.Forms.Button();
             this.downloadLabel = new System.Windows.Forms.Label();
+            this.userFileName = new System.Windows.Forms.TextBox();
+            this.fileFormat = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // uploadButton
@@ -74,18 +76,18 @@
             this.fileStats.Size = new System.Drawing.Size(1021, 513);
             this.fileStats.TabIndex = 7;
             // 
-            // button1
+            // downloadButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.button1.Font = new System.Drawing.Font("Segoe MDL2 Assets", 13.875F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(72)))), ((int)(((byte)(116)))));
-            this.button1.Location = new System.Drawing.Point(785, 851);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(348, 69);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Download TextFile";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.downloadButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.downloadButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 13.875F, System.Drawing.FontStyle.Bold);
+            this.downloadButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(72)))), ((int)(((byte)(116)))));
+            this.downloadButton.Location = new System.Drawing.Point(1142, 844);
+            this.downloadButton.Name = "downloadButton";
+            this.downloadButton.Size = new System.Drawing.Size(348, 72);
+            this.downloadButton.TabIndex = 8;
+            this.downloadButton.Text = "Download TextFile";
+            this.downloadButton.UseVisualStyleBackColor = false;
+            this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
             // 
             // downloadLabel
             // 
@@ -97,14 +99,39 @@
             this.downloadLabel.TabIndex = 9;
             this.downloadLabel.Text = " ";
             // 
+            // userFileName
+            // 
+            this.userFileName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.userFileName.Font = new System.Drawing.Font("Candara Light", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userFileName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(72)))), ((int)(((byte)(116)))));
+            this.userFileName.Location = new System.Drawing.Point(469, 844);
+            this.userFileName.Name = "userFileName";
+            this.userFileName.Size = new System.Drawing.Size(557, 72);
+            this.userFileName.TabIndex = 10;
+            this.userFileName.Text = "fileStats";
+            this.userFileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // fileFormat
+            // 
+            this.fileFormat.AutoSize = true;
+            this.fileFormat.Font = new System.Drawing.Font("Candara Light", 19.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileFormat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(72)))), ((int)(((byte)(116)))));
+            this.fileFormat.Location = new System.Drawing.Point(1032, 852);
+            this.fileFormat.Name = "fileFormat";
+            this.fileFormat.Size = new System.Drawing.Size(104, 64);
+            this.fileFormat.TabIndex = 11;
+            this.fileFormat.Text = ".txt";
+            // 
             // FileStatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(2005, 1095);
+            this.Controls.Add(this.fileFormat);
+            this.Controls.Add(this.userFileName);
             this.Controls.Add(this.downloadLabel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.downloadButton);
             this.Controls.Add(this.fileStats);
             this.Controls.Add(this.title);
             this.Controls.Add(this.uploadButton);
@@ -122,8 +149,10 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.TextBox fileStats;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button downloadButton;
         private System.Windows.Forms.Label downloadLabel;
+        private System.Windows.Forms.TextBox userFileName;
+        private System.Windows.Forms.Label fileFormat;
     }
 }
 
