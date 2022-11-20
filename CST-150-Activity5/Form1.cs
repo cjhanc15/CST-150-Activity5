@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CST_150_Activity5
@@ -81,6 +82,12 @@ namespace CST_150_Activity5
                 }
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        System.IO.File.WriteAllText(@"C:\Users\Public\fileStats.txt", fileStats.Text);
+        downloadLabel.Text = "fileStats.txt downloaded successfully!";
         }
     }
 }
