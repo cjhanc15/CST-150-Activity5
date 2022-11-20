@@ -33,8 +33,8 @@
             this.lowerCaseLabel = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
             this.longestWordLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.firstAlphabetLabel = new System.Windows.Forms.Label();
+            this.lastAlphabetLabel = new System.Windows.Forms.Label();
             this.mostVowelsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -76,23 +76,23 @@
             this.longestWordLabel.TabIndex = 3;
             this.longestWordLabel.Text = "Longest Word:";
             // 
-            // label2
+            // firstAlphabetLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(460, 471);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 25);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "first alphabet";
+            this.firstAlphabetLabel.AutoSize = true;
+            this.firstAlphabetLabel.Location = new System.Drawing.Point(460, 471);
+            this.firstAlphabetLabel.Name = "firstAlphabetLabel";
+            this.firstAlphabetLabel.Size = new System.Drawing.Size(136, 25);
+            this.firstAlphabetLabel.TabIndex = 4;
+            this.firstAlphabetLabel.Text = "first alphabet";
             // 
-            // label3
+            // lastAlphabetLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(460, 525);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "last alphabet";
+            this.lastAlphabetLabel.AutoSize = true;
+            this.lastAlphabetLabel.Location = new System.Drawing.Point(460, 525);
+            this.lastAlphabetLabel.Name = "lastAlphabetLabel";
+            this.lastAlphabetLabel.Size = new System.Drawing.Size(135, 25);
+            this.lastAlphabetLabel.TabIndex = 5;
+            this.lastAlphabetLabel.Text = "last alphabet";
             // 
             // mostVowelsLabel
             // 
@@ -109,8 +109,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2005, 1095);
             this.Controls.Add(this.mostVowelsLabel);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lastAlphabetLabel);
+            this.Controls.Add(this.firstAlphabetLabel);
             this.Controls.Add(this.longestWordLabel);
             this.Controls.Add(this.title);
             this.Controls.Add(this.lowerCaseLabel);
@@ -129,8 +129,8 @@
         private System.Windows.Forms.Label lowerCaseLabel;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label longestWordLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label firstAlphabetLabel;
+        private System.Windows.Forms.Label lastAlphabetLabel;
         private System.Windows.Forms.Label mostVowelsLabel;
     }
 }

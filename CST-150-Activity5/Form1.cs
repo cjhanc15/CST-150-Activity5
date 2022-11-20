@@ -33,7 +33,6 @@ namespace CST_150_Activity5
                     string[] arrayOfFileData = fileData.Split(' ');
 
                     string lowercaseFileData = fileData.ToLower();
-                    lowerCaseLabel.Text = fileData.ToLower();
 
                     int lengthOfWord = 0;
                     string longestWord = "";
@@ -47,7 +46,10 @@ namespace CST_150_Activity5
                         }
                     }
 
-                    longestWordLabel.Text = longestWord;
+                    //ascending order
+                    string firstInAlphabet = arrayOfFileData.OrderBy(x => x.ToLower()).First();
+                    //last in ascending order
+                    string lastInAlphabet = arrayOfFileData.OrderBy(x => x.ToLower()).Last();
 
                     string[] arrayOfVowels = {"a", "e", "i", "o", "u"};
 
@@ -75,6 +77,10 @@ namespace CST_150_Activity5
                         }
                     }
 
+                    lowerCaseLabel.Text = lowercaseFileData;
+                    firstAlphabetLabel.Text = firstInAlphabet;
+                    lastAlphabetLabel.Text = lastInAlphabet;
+                    longestWordLabel.Text = longestWord;
                     mostVowelsLabel.Text = mostVowels;
                 }
 
