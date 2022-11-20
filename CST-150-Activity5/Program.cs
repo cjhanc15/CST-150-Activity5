@@ -16,7 +16,7 @@ namespace CST_150_Activity5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FileStatsForm());
         }
     }
 }

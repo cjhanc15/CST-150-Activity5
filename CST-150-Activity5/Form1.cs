@@ -14,9 +14,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CST_150_Activity5
 {
-    public partial class Form1 : Form
+    public partial class FileStatsForm : Form
     {
-        public Form1()
+        public FileStatsForm()
         {
             InitializeComponent();
         }
